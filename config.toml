@@ -1,0 +1,14 @@
+[initialisation]
+field_to_keep = "Adj Close"
+begin_date = "2015-01-02"
+end_date = "2020-03-27"
+portfolio_column = "Portfolio"
+
+[portfolio]
+MSFT = 0.14285714285714285
+AAPL = 0.14285714285714285
+NVDA = 0.14285714285714285
+GOOGL = 0.14285714285714285
+GOOG = 0.14285714285714285
+AMZN = 0.14285714285714285
+META = 0.14285714285714285

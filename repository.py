@@ -13,6 +13,8 @@ def get_config() -> Dict:
     return get_toml_data(path)
 
 
+
+
 def get_weights(config: Dict) -> np.array:
     return np.array(list(config["portfolio"].values()))
 
@@ -30,10 +32,7 @@ def get_data(config: Dict):
 if __name__ == "__main__":
     conf = get_config()
     print(get_weights(conf))
-    print("*" * 20)
     results = get_data(conf)
-    print(results.columns)
-    print(results.columns.nlevels)
     print(results)
-    print("toml", "-" * 20)
-    print(get_config())
+    print(conf)
+
