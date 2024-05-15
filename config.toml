@@ -12,3 +12,19 @@ GOOGL = 0.14285714285714285
 GOOG = 0.14285714285714285
 AMZN = 0.14285714285714285
 META = 0.14285714285714285
+
+[index]
+GSPC= 1
+
+[view_mode]
+print = true
+pandasgui = true
+
+[view]
+column_values = "Values"
+return = "Portfolio return"
+variance = "Portfolio variance"
+std = "Standard veviation"
+sharpe = "Sharpe Ratio"
+Var95 = "Var 95"
+CVar95 = "CVar 95"
