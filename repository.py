@@ -5,9 +5,11 @@ import numpy as np
 import yfinance as yf
 import pandas as pd
 import fredapi
+from datetime import datetime, timedelta
 
 from constants import CONFIG_FILE
 from helpers import get_toml_data
+
 
 
 def get_config() -> Dict:
@@ -21,10 +23,12 @@ def get_weights(config: Dict) -> np.array:
 
 def get_data(config: Dict):
     tickers = list(config["portfolio"].keys())
+    end_date = datetime.today()
+    start_date = end_date - timedelta(days=10*365)  # 10 years back from today
     data = yf.download(
         tickers,
-        start=config["initialisation"]["begin_date"],
-        end=config["initialisation"]["end_date"],
+        start=start_date,
+        end=end_date,
     )
     return data[config["initialisation"]["field_to_keep"]]
 

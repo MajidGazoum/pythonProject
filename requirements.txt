@@ -1,0 +1,9 @@
+pandas
+pandasgui
+numpy
+yfinance
+pandas
+fredapi
+tomli
+datetime
+typing
