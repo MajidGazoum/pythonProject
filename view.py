@@ -8,7 +8,9 @@ def display_results(
     results: Dict, config: Dict
 ) -> None:
     indicators = pd.DataFrame.from_dict(
-        results, orient="index", columns=[config["view"]["column_values"]]
+        {key: [value] for key, value in results.items()},
+        orient="index",
+        columns=[config["view"]["column_values"]]
     )
 
     if config["view_mode"]["print"]:

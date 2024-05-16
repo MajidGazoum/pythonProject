@@ -15,8 +15,6 @@ def get_config() -> Dict:
     return get_toml_data(path)
 
 
-
-
 def get_weights(config: Dict) -> np.array:
     return np.array(list(config["portfolio"].values()))
 
@@ -29,6 +27,7 @@ def get_data(config: Dict):
         end=config["initialisation"]["end_date"],
     )
     return data[config["initialisation"]["field_to_keep"]]
+
 
 def Calcul_Rendement(dataframe: pd.DataFrame):
     rendement = dataframe.pct_change()
@@ -45,7 +44,6 @@ def Extract_rf():
     us_treasury_10y = fred.get_series_latest_release('GS10') / 100
     rfr = us_treasury_10y.iloc[-1]
     return float(rfr)
-
 
 
 if __name__ == "__main__":
