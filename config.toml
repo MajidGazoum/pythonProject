@@ -17,6 +17,7 @@ GSPC= 1
 [view_mode]
 print = true
 pandasgui = true
+streamlit = true
 
 [view]
 column_values = "Values"
