@@ -8,3 +8,4 @@ tomli
 datetime
 typing
 setuptools
+streamlit

@@ -11,7 +11,6 @@ from constants import CONFIG_FILE
 from helpers import get_toml_data
 
 
-
 def get_config() -> Dict:
     path = os.path.join(os.getcwd(), CONFIG_FILE)
     return get_toml_data(path)
@@ -43,11 +42,11 @@ def Calcul_Valeur_PF(prix_actifs: pd.DataFrame, weights: np.array):
     valeur = pd.DataFrame(valeur, columns=['Portefeuille'], index=prix_actifs.index)
     return valeur
 
-def Extract_rf():
+def Extract_rf() -> np.float64:
     fred = fredapi.Fred(api_key='55cc7affbaba092c1f14f4fd882eaaf5')
     us_treasury_10y = fred.get_series_latest_release('GS10') / 100
     rfr = us_treasury_10y.iloc[-1]
-    return float(rfr)
+    return rfr
 
 
 if __name__ == "__main__":
